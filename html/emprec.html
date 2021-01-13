@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html class="loading" lang="en" data-textdirection="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+  <title>Employee Record | Sigma Tech</title>
+  <!-- BEGIN: Vendor CSS-->
+  <link rel="stylesheet" type="text/css" href="../app-assets/vendors/css/vendors.min.css">
+  <link rel="stylesheet" type="text/css" href="../app-assets/vendors/css/tables/datatable/datatables.min.css">
+  <!-- END: Vendor CSS-->
+
+  <!-- BEGIN: Theme CSS-->
+  <link rel="stylesheet" type="text/css" href="../app-assets/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="../app-assets/css/bootstrap-extended.css">
+  <link rel="stylesheet" type="text/css" href="../app-assets/css/colors.css">
+  <link rel="stylesheet" type="text/css" href="../app-assets/css/components.css">
+  <link rel="stylesheet" type="text/css" href="../app-assets/css/themes/dark-layout.css">
+  <link rel="stylesheet" type="text/css" href="../app-assets/css/themes/semi-dark-layout.css">
+
+  <!-- BEGIN: Page CSS-->
+  <link rel="stylesheet" type="text/css" href="../app-assets/css/core/menu/menu-types/vertical-menu.css">
+  <link rel="stylesheet" type="text/css" href="../app-assets/css/core/colors/palette-gradient.css">
+  <!-- END: Page CSS-->
+
+  <!-- BEGIN: Custom CSS-->
+  <link rel="stylesheet" type="text/css" href="../assets/css/emprec-style.css">
+  <!-- END: Custom CSS-->
+</head>
+
+<body>
+  <div class="topnav">
+    <img src="https://sigmatelecom.com/wp-content/uploads/2019/12/2-01.png">
+    <span onclick="window.location.href='login.html'"><i class="feather icon-power" width="30" height="30"></i> Logout</span>
+  </div>
+  <div class="leftnav">
+    <ul>
+      <li><a href="attendance.html">ATTENDANCE</a></li>
+      <li><a href="addemp.html">ADD EMPLOYEE</a></li>
+      <li><a href="emprec.html">EMPLOYEE RECORDS</a></li>
+    </ul>
+  </div>
+  <div class="app-content content">
+    <div class="wrapper">
+      <div class="content-body">
+        <section id="basic-datatable">
+          <div class="row">
+            <div class="col-12">
+              <div class="card">
+                <div class="card-header">
+                  <h4 class="card-title">Employees Information</h4>
+                </div>
+                <div class="card-content">
+                  <div class="card-body card-dashboard">
+                    <div class="table-responsive">
+                      <table class="table zero-configuration">
+                        <thead>
+                          <tr>
+                            <th>Emp. Name</th>
+                            <th>Emp. ID</th>
+                            <th>Team</th>
+                            <th>Age</th>
+                            <th>Experience</th>
+                            <th>Salary (/yr)</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Praveen M</td>
+                            <td>EM#FE#002</td>
+                            <td>Front End</td>
+                            <td>25</td>
+                            <td>2</td>
+                            <td>&#8377; 320,800</td>
+                          </tr>
+                          <tr>
+                            <td>Deetchi T</td>
+                            <td>EM#FE#001</td>
+                            <td>Front End</td>
+                            <td>23</td>
+                            <td>2</td>
+                            <td>&#8377; 320,800</td>
+                          </tr>
+                          <tr>
+                            <td>Rethika UM</td>
+                            <td>EM#BE#013</td>
+                            <td>Back End</td>
+                            <td>24</td>
+                            <td>3</td>
+                            <td>&#8377; 450,550</td>
+                          </tr>
+                          <tr>
+                            <td>Prathik RJ</td>
+                            <td>EM#CL#080</td>
+                            <td>Cloud</td>
+                            <td>27</td>
+                            <td>4</td>
+                            <td>&#8377; 530,000</td>
+                          </tr>
+                          <tr>
+                            <td>Preethick R</td>
+                            <td>HR#RC#701</td>
+                            <td>Human Resource</td>
+                            <td>32</td>
+                            <td>7</td>
+                            <td>&#8377; 680,200</td>
+                          </tr>
+                          <tr>
+                            <td>Sneha Anthony</td>
+                            <td>HR#RC#702</td>
+                            <td>Human Resource</td>
+                            <td>22</td>
+                            <td>1</td>
+                            <td>&#8377; 300,000</td>
+                          </tr>
+                        </tbody>
+                        <tfoot>
+                          <tr>
+                            <th>Emp. Name</th>
+                            <th>Emp. ID</th>
+                            <th>Team</th>
+                            <th>Age</th>
+                            <th>Experience</th>
+                            <th>Salary (/yr)</th>
+                          </tr>
+                        </tfoot>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+  <!-- BEGIN: Vendor JS-->
+  <script src="../app-assets/vendors/js/vendors.min.js"></script>
+  <!-- BEGIN Vendor JS-->
+
+  <!-- BEGIN: Page Vendor JS-->
+  <script src="../app-assets/vendors/js/tables/datatable/pdfmake.min.js"></script>
+  <script src="../app-assets/vendors/js/tables/datatable/vfs_fonts.js"></script>
+  <script src="../app-assets/vendors/js/tables/datatable/datatables.min.js"></script>
+  <script src="../app-assets/vendors/js/tables/datatable/datatables.buttons.min.js"></script>
+  <script src="../app-assets/vendors/js/tables/datatable/buttons.html5.min.js"></script>
+  <script src="../app-assets/vendors/js/tables/datatable/buttons.print.min.js"></script>
+  <script src="../app-assets/vendors/js/tables/datatable/buttons.bootstrap.min.js"></script>
+  <script src="../app-assets/vendors/js/tables/datatable/datatables.bootstrap4.min.js"></script>
+  <!-- END: Page Vendor JS-->
+
+  <!-- BEGIN: Theme JS-->
+  <script src="../app-assets/js/core/app-menu.js"></script>
+  <script src="../app-assets/js/core/app.js"></script>
+  <script src="../app-assets/js/scripts/components.js"></script>
+  <!-- END: Theme JS-->
+
+  <!-- BEGIN: Page JS-->
+  <script src="../app-assets/js/scripts/datatables/datatable.js"></script>
+  <!-- END: Page JS-->
+</body>
+
+</html>

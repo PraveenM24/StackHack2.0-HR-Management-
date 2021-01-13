@@ -1,0 +1,71 @@
+import url('https://fonts.googleapis.com/css?family=Poppins');
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: #fff;
+}
+
+.topnav {
+  background-color: #56baed;
+  height: 50px;
+}
+
+.topnav img {
+  height: 85px;
+  width: 230px;
+  padding-left: 20px;
+  padding-top: 6px;
+}
+
+.topnav span {
+  color: #13214A;
+  float: right;
+  margin: 10px 20px;
+}
+
+.topnav i, .topnav span {
+  font-weight: bold;
+  font-size: 19px;
+}
+
+.topnav i:hover, .topnav span:hover {
+  color: white;
+  cursor: pointer;
+}
+
+.leftnav {
+  padding-top: 10px;
+  width: 17%;
+  background-color: #f1f1f1;
+  height: inherit;
+  position: absolute;
+  overflow: auto;
+}
+
+.leftnav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: #f1f1f1;
+}
+
+.leftnav li a {
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.leftnav li a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.leftnav li a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
+.wrapper {
+  margin: 14px 14px;
+}
