@@ -31,6 +31,34 @@
 </head>
 
 <body>
+  <script type="text/javascript">
+    window.onload = function() {
+      fetch('http://localhost:7000/aliens')
+        .then(function(response) {
+          return response.json();
+        })
+        .then(function(data) {
+          console.log(data);
+          for (var i = 0; i < data.length; i++) {
+            var location1 = 'empname' + (i + 1);
+            document.getElementById(location1).innerHTML = data[i].empname;
+            var location2 = 'empid' + (i + 1);
+            document.getElementById(location2).innerHTML = data[i].empid;
+            var location3 = 'team' + (i + 1);
+            document.getElementById(location3).innerHTML = data[i].team;
+            var location4 = 'age' + (i + 1);
+            document.getElementById(location4).innerHTML = data[i].age;
+            var location5 = 'exp' + (i + 1);
+            document.getElementById(location5).innerHTML = data[i].experience;
+            var location6 = 'salary' + (i + 1);
+            document.getElementById(location6).innerHTML = data[i].salary;
+          }
+        })
+        .catch(function(error) {
+          console.log(error);
+        });
+    }
+  </script>
   <div class="topnav">
     <img src="https://sigmatelecom.com/wp-content/uploads/2019/12/2-01.png">
     <span onclick="window.location.href='login.html'"><i class="feather icon-power" width="30" height="30"></i> Logout</span>
@@ -54,88 +82,121 @@
                 </div>
                 <div class="card-content">
                   <div class="card-body card-dashboard">
-                    <div class="table-responsive">
-                      <table class="table zero-configuration">
-                        <thead>
-                          <tr>
-                            <th>Emp. Name</th>
-                            <th>Emp. ID</th>
-                            <th>Team</th>
-                            <th>Age</th>
-                            <th>Experience</th>
-                            <th>Salary (/yr)</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td>Praveen M</td>
-                            <td>EM#FE#002</td>
-                            <td>Front End</td>
-                            <td>25</td>
-                            <td>2</td>
-                            <td>&#8377; 320,800</td>
-                          </tr>
-                          <tr>
-                            <td>Deetchi T</td>
-                            <td>EM#FE#001</td>
-                            <td>Front End</td>
-                            <td>23</td>
-                            <td>2</td>
-                            <td>&#8377; 320,800</td>
-                          </tr>
-                          <tr>
-                            <td>Rethika UM</td>
-                            <td>EM#BE#013</td>
-                            <td>Back End</td>
-                            <td>24</td>
-                            <td>3</td>
-                            <td>&#8377; 450,550</td>
-                          </tr>
-                          <tr>
-                            <td>Prathik RJ</td>
-                            <td>EM#CL#080</td>
-                            <td>Cloud</td>
-                            <td>27</td>
-                            <td>4</td>
-                            <td>&#8377; 530,000</td>
-                          </tr>
-                          <tr>
-                            <td>Preethick R</td>
-                            <td>HR#RC#701</td>
-                            <td>Human Resource</td>
-                            <td>32</td>
-                            <td>7</td>
-                            <td>&#8377; 680,200</td>
-                          </tr>
-                          <tr>
-                            <td>Sneha Anthony</td>
-                            <td>HR#RC#702</td>
-                            <td>Human Resource</td>
-                            <td>22</td>
-                            <td>1</td>
-                            <td>&#8377; 300,000</td>
-                          </tr>
-                        </tbody>
-                        <tfoot>
-                          <tr>
-                            <th>Emp. Name</th>
-                            <th>Emp. ID</th>
-                            <th>Team</th>
-                            <th>Age</th>
-                            <th>Experience</th>
-                            <th>Salary (/yr)</th>
-                          </tr>
-                        </tfoot>
-                      </table>
-                    </div>
+                    <table class="table zero-configuration">
+                      <thead>
+                        <tr>
+                          <th>Emp. Name</th>
+                          <th>Emp. ID</th>
+                          <th>Team</th>
+                          <th>Age</th>
+                          <th>Experience</th>
+                          <th>Salary (&#8377;/yr)</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td id="empname1"></td>
+                          <td id="empid1"></td>
+                          <td id="team1"></td>
+                          <td id="age1"></td>
+                          <td id="exp1"></td>
+                          <td id="salary1"></td>
+                        </tr>
+                        <tr>
+                          <td id="empname2"></td>
+                          <td id="empid2"></td>
+                          <td id="team2"></td>
+                          <td id="age2"></td>
+                          <td id="exp2"></td>
+                          <td id="salary2"></td>
+                        </tr>
+                        <tr>
+                          <td id="empname3"></td>
+                          <td id="empid3"></td>
+                          <td id="team3"></td>
+                          <td id="age3"></td>
+                          <td id="exp3"></td>
+                          <td id="salary3"></td>
+                        </tr>
+                        <tr>
+                          <td id="empname4"></td>
+                          <td id="empid4"></td>
+                          <td id="team4"></td>
+                          <td id="age4"></td>
+                          <td id="exp4"></td>
+                          <td id="salary4"></td>
+                        </tr>
+                        <tr>
+                          <td id="empname5"></td>
+                          <td id="empid5"></td>
+                          <td id="team5"></td>
+                          <td id="age5"></td>
+                          <td id="exp5"></td>
+                          <td id="salary5"></td>
+                        </tr>
+                        <tr>
+                          <td id="empname6"></td>
+                          <td id="empid6"></td>
+                          <td id="team6"></td>
+                          <td id="age6"></td>
+                          <td id="exp6"></td>
+                          <td id="salary6"></td>
+                        </tr>
+                        <tr>
+                          <td id="empname7"></td>
+                          <td id="empid7"></td>
+                          <td id="team7"></td>
+                          <td id="age7"></td>
+                          <td id="exp7"></td>
+                          <td id="salary7"></td>
+                        </tr>
+                        <tr>
+                          <td id="empname8"></td>
+                          <td id="empid8"></td>
+                          <td id="team8"></td>
+                          <td id="age8"></td>
+                          <td id="exp8"></td>
+                          <td id="salary8"></td>
+                        </tr>
+                        <tr>
+                          <td id="empname9"></td>
+                          <td id="empid9"></td>
+                          <td id="team9"></td>
+                          <td id="age9"></td>
+                          <td id="exp9"></td>
+                          <td id="salary9"></td>
+                        </tr>
+                        <tr>
+                          <td id="empname10"></td>
+                          <td id="empid10"></td>
+                          <td id="team10"></td>
+                          <td id="age10"></td>
+                          <td id="exp10"></td>
+                          <td id="salary10"></td>
+                        </tr>
+
+                      </tbody>
+                      <tfoot>
+                        <tr>
+                          <th>Emp. Name</th>
+                          <th>Emp. ID</th>
+                          <th>Team</th>
+                          <th>Age</th>
+                          <th>Experience</th>
+                          <th>Salary (&#8377;/yr)</th>
+                        </tr>
+                      </tfoot>
+                    </table>
+
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </section>
       </div>
+      </section>
     </div>
+  </div>
   </div>
   <!-- BEGIN: Vendor JS-->
   <script src="../app-assets/vendors/js/vendors.min.js"></script>
