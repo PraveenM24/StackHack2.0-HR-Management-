@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html class="loading" lang="en" data-textdirection="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+  <title>Add Employee | Sigma Tech</title>
+
+  <!-- BEGIN: Vendor CSS-->
+  <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/vendors.min.css">
+  <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/extensions/toastr.css">
+  <!-- END: Vendor CSS-->
+
+  <!-- BEGIN: Theme CSS-->
+  <link rel="stylesheet" type="text/css" href="app-assets/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="app-assets/css/bootstrap-extended.css">
+  <link rel="stylesheet" type="text/css" href="app-assets/css/colors.css">
+  <link rel="stylesheet" type="text/css" href="app-assets/css/components.css">
+  <link rel="stylesheet" type="text/css" href="app-assets/css/themes/dark-layout.css">
+  <link rel="stylesheet" type="text/css" href="app-assets/css/themes/semi-dark-layout.css">
+
+  <!-- BEGIN: Page CSS-->
+  <link rel="stylesheet" type="text/css" href="app-assets/css/core/menu/menu-types/vertical-menu.css">
+  <link rel="stylesheet" type="text/css" href="app-assets/css/core/colors/palette-gradient.css">
+  <link rel="stylesheet" type="text/css" href="app-assets/css/plugins/forms/wizard.css">
+  <link rel="stylesheet" type="text/css" href="app-assets/css/plugins/extensions/toastr.css">
+  <!-- END: Page CSS-->
+
+  <!-- BEGIN: Custom CSS-->
+  <link rel="stylesheet" type="text/css" href="assets/css/emprec-style.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/addemp-style.css">
+  <!-- END: Custom CSS-->
+</head>
+
+<body>
+  <div class="topnav">
+    <img src="https://sigmatelecom.com/wp-content/uploads/2019/12/2-01.png">
+    <span onclick="window.location.href='index.html'"><i class="feather icon-power" width="30" height="30"></i> Logout</span>
+  </div>
+  <div class="leftnav">
+    <ul>
+      <li><a href="attendance.html">ATTENDANCE</a></li>
+      <li><a href="addemp.html">ADD EMPLOYEE</a></li>
+      <li><a href="emprec.html">EMPLOYEE RECORDS</a></li>
+    </ul>
+  </div>
+  <div class="app-content content">
+    <div class="content-body">
+      <section id="icon-tabs">
+        <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-header">
+                <h4 class="card-title">Enter Employee Details</h4>
+              </div>
+              <div class="card-content">
+                <div class="card-body">
+                  <form action="#" class="icons-tab-steps wizard-circle">
+
+                    <!-- Step 1 -->
+                    <h6><i class="step-icon feather icon-user"></i> Personal Info </h6>
+                    <fieldset>
+                      <div class="row">
+                        <div class="col-sm-6">
+                          <div class="form-group">
+                            <label for="firstName11">First Name </label>
+                            <input type="text" class="form-control" id="firstName11">
+                          </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                          <div class="form-group">
+                            <label for="lastName11">Last Name</label>
+                            <input type="text" class="form-control" id="lastName11">
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-sm-6">
+                          <div class="form-group">
+                            <label for="emailAddress11">Email</label>
+                            <input type="email" class="form-control" id="emailAddress11">
+                          </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                          <div class="form-group">
+                            <label for="location11">Age</label>
+                            <input type="text" class="form-control" id="dob11">
+                          </div>
+                        </div>
+                      </div>
+                    </fieldset>
+
+                    <!-- Step 2 -->
+                    <h6><i class="step-icon feather icon-code"></i> Job Role</h6>
+                    <fieldset>
+                      <div class="row">
+                        <div class="col-sm-6">
+                          <div class="form-group">
+                            <label for="jobtitle11">Job Title</label>
+                            <select class="custom-select form-control required" id="Job Title">
+                              <option value="Front End">Front End Developer</option>
+                              <option value="Back End">Back End Developer</option>
+                              <option value="Cloud">Cloud Developer</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="col-sm-6">
+                          <div class="form-group">
+                            <label for="empid11">Employee ID</label>
+                            <input type="text" class="form-control" id="empid11">
+                          </div>
+                        </div>
+                      </div>
+                    </fieldset>
+                    <!-- Step 4 -->
+                    <h6><i class="step-icon feather icon-tag"></i> Team </h6>
+                    <fieldset>
+                      <div class="row">
+                        <div class="col-sm-6">
+                          <div class="form-group">
+                            <label for="teamtitle11">Team</label>
+                            <select class="custom-select form-control required" id="team Title">
+                              <option value="Alpha">Alpha</option>
+                              <option value="Beta">Beta</option>
+                              <option value="Gamma">Gamma</option>
+                              <option value="Delta">Delta</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </fieldset>
+                    <!-- Step 4 -->
+                    <h6><i class="step-icon feather icon-dollar-sign"></i> Salary Details</h6>
+                    <fieldset>
+                      <div class="row">
+                        <div class="col-sm-6">
+                          <div class="form-group">
+                            <label for="Basic Salary">Basic Salary </label>
+                            <input type="text" class="form-control" id="basicsalary11">
+                          </div>
+                        </div>
+                        <div class="col-sm-6">
+                          <div class="form-group">
+                            <label for="Basic Salary">House Rent Allowance </label>
+                            <input type="text" class="form-control" id="basicsalary12">
+                          </div>
+                        </div>
+                        <div class="col-sm-6">
+                          <div class="form-group">
+                            <label for="Basic Salary">Medical Allowance </label>
+                            <input type="text" class="form-control" id="basicsalary13">
+                          </div>
+                        </div>
+                        <div class="col-sm-6">
+                          <div class="form-group">
+                            <label for="Basic Salary">Eductional Allowance </label>
+                            <input type="text" class="form-control" id="basicsalary14">
+                          </div>
+                        </div>
+                        <div class="col-sm-6">
+                          <div class="form-group">
+                            <label for="Basic Salary">Special Allowance </label>
+                            <input type="text" class="form-control" id="basicsalary15">
+                          </div>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- BEGIN: Vendor JS-->
+  <script src="app-assets/vendors/js/vendors.min.js"></script>
+  <!-- BEGIN Vendor JS-->
+
+  <!-- BEGIN: Page Vendor JS-->
+  <script src="app-assets/vendors/js/extensions/jquery.steps.min.js"></script>
+  <script src="app-assets/vendors/js/forms/validation/jquery.validate.min.js"></script>
+  <!-- END: Page Vendor JS-->
+
+  <!-- BEGIN: Theme JS-->
+  <script src="app-assets/js/core/app-menu.js"></script>
+  <script src="app-assets/js/core/app.js"></script>
+  <script src="app-assets/js/scripts/components.js"></script>
+  <!-- END: Theme JS-->
+
+  <!-- BEGIN: Page JS-->
+  <script src="app-assets/js/scripts/forms/wizard-steps.js"></script>
+  <script src="/__/firebase/8.2.3/firebase-app.js"></script>
+  <script src="/__/firebase/init.js"></script>
+  <!-- END: Page JS-->
+</body>
+
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html class="loading" lang="en" data-textdirection="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Login | Sigma Tech</title>
+  <link rel="stylesheet" type="text/css" href="assets/css/login-style.css">
+</head>
+
+<body>
+  <div class="wrapper fadeInDown">
+    <div id="formContent">
+      <div class="fadeIn first">
+        <img src="https://media-exp1.licdn.com/dms/image/C560BAQEHjasAtNHyyg/company-logo_200_200/0/1520860383084?e=2159024400&v=beta&t=2fWavxhKBnoy9uuXIAxdXf6ba2vBj1abDl1AQakqcmE" height="250" width="300" padding="0px" id="icon" alt="User Icon" />
+      </div>
+      <span id='Error'></span>
+      <form method="post">
+        <input type="text" id="empid" class="fadeIn second" name="login" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Emp ID'" placeholder='Emp ID' required>
+        <input type="password" id="password" class="fadeIn third" name="login" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Password'" placeholder='Password' required>
+        <input type="button" id="submit" class="fadeIn fourth" value="Log In" onclick="validate()">
+      </form>
+      <div id="formFooter">
+        <a class="underlineHover" href="#" onclick="sendEmail()">Forgot Password?</a>
+      </div>
+      <script src="https://smtpjs.com/v3/smtp.js"></script>
+      <script type="text/javascript">
+        function validate() {
+          fetch('https://sigmatechapi.herokuapp.com/login')
+            .then(function(response) {
+              return response.json();
+            })
+            .then(function(data) {
+              var id = document.getElementById('empid').value;
+              var password = document.getElementById('password').value;
+              for (var i = 0; i < data.length; i++) {
+                window.empid = data[i].empid
+                window.email = data[i].email
+                window.pwd = data[i].password
+                if (id == data[i].empid && password == data[i].password) {
+                  window.location.href = ('attendance.html');
+                } else {
+                  document.getElementById("Error").innerHTML = "Invalid Credentials";
+                  setTimeout(function() {
+                    document.getElementById("Error").innerHTML = "";
+                  }, 3000);
+                }
+              }
+            })
+            .catch(function(error) {
+              console.log(error);
+            });
+        }
+
+        function sendEmail() {
+          Email.send({
+              Host: "smtp.gmail.com",
+              Username: "sigmatechapi@gmail.com",
+              Password: "sigmatech",
+              To: email,
+              From: "sigmatechapi@gmail.com",
+              Subject: "SigmaTech - Forgot Password",
+              Body: "Hello " + empid + ",<br /><br /> Your password is <b>" + pwd + "</b><br /><br />Note: This is a no reply email",
+            })
+            .then(function(message) {
+              alert("Password has been sent to your Email")
+            });
+        }
+      </script>
+      <script src="/__/firebase/8.2.3/firebase-app.js"></script>
+      <script src="/__/firebase/init.js"></script>
+    </div>
+  </div>
+</body>
+
+</html>

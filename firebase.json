@@ -1,0 +1,11 @@
+{
+  "hosting": {
+    "site": "sigmatechnologies",
+    "public": "public",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

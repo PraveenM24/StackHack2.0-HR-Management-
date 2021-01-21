@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html class="loading" lang="en" data-textdirection="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+  <title>Employee Record | Sigma Tech</title>
+  <!-- BEGIN: Vendor CSS-->
+  <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/vendors.min.css">
+  <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/tables/datatable/datatables.min.css">
+  <!-- END: Vendor CSS-->
+
+  <!-- BEGIN: Theme CSS-->
+  <link rel="stylesheet" type="text/css" href="app-assets/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="app-assets/css/bootstrap-extended.css">
+  <link rel="stylesheet" type="text/css" href="app-assets/css/colors.css">
+  <link rel="stylesheet" type="text/css" href="app-assets/css/components.css">
+  <link rel="stylesheet" type="text/css" href="app-assets/css/themes/dark-layout.css">
+  <link rel="stylesheet" type="text/css" href="app-assets/css/themes/semi-dark-layout.css">
+
+  <!-- BEGIN: Page CSS-->
+  <link rel="stylesheet" type="text/css" href="app-assets/css/core/menu/menu-types/vertical-menu.css">
+  <link rel="stylesheet" type="text/css" href="app-assets/css/core/colors/palette-gradient.css">
+  <!-- END: Page CSS-->
+
+  <!-- BEGIN: Custom CSS-->
+  <link rel="stylesheet" type="text/css" href="assets/css/emprec-style.css">
+  <!-- END: Custom CSS-->
+</head>
+
+<body>
+
+  <div class="topnav">
+    <img src="https://sigmatelecom.com/wp-content/uploads/2019/12/2-01.png">
+    <span onclick="window.location.href='index.html'"><i class="feather icon-power" width="30" height="30"></i> Logout</span>
+  </div>
+  <div class="leftnav">
+    <ul>
+      <li><a href="attendance.html">ATTENDANCE</a></li>
+      <li><a href="addemp.html">ADD EMPLOYEE</a></li>
+      <li><a href="emprec.html">EMPLOYEE RECORDS</a></li>
+    </ul>
+  </div>
+  <div class="app-content content">
+    <div class="wrapper">
+      <div class="content-body">
+        <section id="basic-datatable">
+          <div class="row">
+            <div class="col-12">
+              <div class="card">
+                <div class="card-header">
+                  <h4 class="card-title">Employees Information</h4>
+                </div>
+                <div class="card-content">
+                  <div class="card-body card-dashboard">
+                    <table class="table zero-configuration">
+                      <thead>
+                        <tr>
+                          <th>Emp. Name</th>
+                          <th>Emp. ID</th>
+                          <th>Email ID</th>
+                          <th>Technology</th>
+                          <th>Team</th>
+                          <th>Age</th>
+                          <th>Experience</th>
+                          <th>Salary (&#8377;/yr)</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td id="empname1"></td>
+                          <td id="empid1"></td>
+                          <td id="email1"></td>
+                          <td id="tech1"></td>
+                          <td id="team1"></td>
+                          <td id="age1"></td>
+                          <td id="exp1"></td>
+                          <td id="salary1"></td>
+                        </tr>
+                        <tr>
+                          <td id="empname2"></td>
+                          <td id="empid2"></td>
+                          <td id="email2"></td>
+                          <td id="tech2"></td>
+                          <td id="team2"></td>
+                          <td id="age2"></td>
+                          <td id="exp2"></td>
+                          <td id="salary2"></td>
+                        </tr>
+                        <tr>
+                          <td id="empname3"></td>
+                          <td id="empid3"></td>
+                          <td id="email3"></td>
+                          <td id="tech3"></td>
+                          <td id="team3"></td>
+                          <td id="age3"></td>
+                          <td id="exp3"></td>
+                          <td id="salary3"></td>
+                        </tr>
+                        <tr>
+                          <td id="empname4"></td>
+                          <td id="empid4"></td>
+                          <td id="email4"></td>
+                          <td id="tech4"></td>
+                          <td id="team4"></td>
+                          <td id="age4"></td>
+                          <td id="exp4"></td>
+                          <td id="salary4"></td>
+                        </tr>
+                        <tr>
+                          <td id="empname5"></td>
+                          <td id="empid5"></td>
+                          <td id="email5"></td>
+                          <td id="tech5"></td>
+                          <td id="team5"></td>
+                          <td id="age5"></td>
+                          <td id="exp5"></td>
+                          <td id="salary5"></td>
+                        </tr>
+                        <tr>
+                          <td id="empname6"></td>
+                          <td id="empid6"></td>
+                          <td id="email6"></td>
+                          <td id="tech6"></td>
+                          <td id="team6"></td>
+                          <td id="age6"></td>
+                          <td id="exp6"></td>
+                          <td id="salary6"></td>
+                        </tr>
+                        <tr>
+                          <td id="empname7"></td>
+                          <td id="empid7"></td>
+                          <td id="email7"></td>
+                          <td id="tech7"></td>
+                          <td id="team7"></td>
+                          <td id="age7"></td>
+                          <td id="exp7"></td>
+                          <td id="salary7"></td>
+                        </tr>
+                        <tr>
+                          <td id="empname8"></td>
+                          <td id="empid8"></td>
+                          <td id="email8"></td>
+                          <td id="tech8"></td>
+                          <td id="team8"></td>
+                          <td id="age8"></td>
+                          <td id="exp8"></td>
+                          <td id="salary8"></td>
+                        </tr>
+                        <tr>
+                          <td id="empname9"></td>
+                          <td id="empid9"></td>
+                          <td id="email9"></td>
+                          <td id="tech9"></td>
+                          <td id="team9"></td>
+                          <td id="age9"></td>
+                          <td id="exp9"></td>
+                          <td id="salary9"></td>
+                        </tr>
+                        <tr>
+                          <td id="empname10"></td>
+                          <td id="empid10"></td>
+                          <td id="email10"></td>
+                          <td id="tech10"></td>
+                          <td id="team10"></td>
+                          <td id="age10"></td>
+                          <td id="exp10"></td>
+                          <td id="salary10"></td>
+                        </tr>
+                      </tbody>
+                      <tfoot>
+                        <tr>
+                          <th>Emp. Name</th>
+                          <th>Emp. ID</th>
+                          <th>Email ID</th>
+                          <th>Technology</th>
+                          <th>Team</th>
+                          <th>Age</th>
+                          <th>Experience</th>
+                          <th>Salary (&#8377;/yr)</th>
+                        </tr>
+                      </tfoot>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+      </section>
+    </div>
+  </div>
+  </div>
+  <!-- BEGIN: Vendor JS-->
+  <script src="app-assets/vendors/js/vendors.min.js"></script>
+  <!-- BEGIN Vendor JS-->
+
+  <!-- BEGIN: Page Vendor JS-->
+  <script src="app-assets/vendors/js/tables/datatable/pdfmake.min.js"></script>
+  <script src="app-assets/vendors/js/tables/datatable/vfs_fonts.js"></script>
+  <script src="app-assets/vendors/js/tables/datatable/datatables.min.js"></script>
+  <script src="app-assets/vendors/js/tables/datatable/datatables.buttons.min.js"></script>
+  <script src="app-assets/vendors/js/tables/datatable/buttons.html5.min.js"></script>
+  <script src="app-assets/vendors/js/tables/datatable/buttons.print.min.js"></script>
+  <script src="app-assets/vendors/js/tables/datatable/buttons.bootstrap.min.js"></script>
+  <script src="app-assets/vendors/js/tables/datatable/datatables.bootstrap4.min.js"></script>
+  <!-- END: Page Vendor JS-->
+
+  <!-- BEGIN: Theme JS-->
+  <script src="app-assets/js/core/app-menu.js"></script>
+  <script src="app-assets/js/core/app.js"></script>
+  <script src="app-assets/js/scripts/components.js"></script>
+  <!-- END: Theme JS-->
+
+  <!-- BEGIN: Page JS-->
+  <script src="app-assets/js/scripts/datatables/datatable.js"></script>
+  <script type="text/javascript">
+    window.onload = function() {
+      fetch('https://sigmatechapi.herokuapp.com/employees')
+        .then(function(response) {
+          return response.json();
+        })
+        .then(function(data) {
+          for (var i = 0; i < data.length; i++) {
+            var location1 = 'empname' + (i + 1);
+            document.getElementById(location1).innerHTML = data[i].empname;
+            var location2 = 'empid' + (i + 1);
+            document.getElementById(location2).innerHTML = data[i].empid;
+            var location3 = 'email' + (i + 1);
+            document.getElementById(location3).innerHTML = data[i].email;
+            var location4 = 'tech' + (i + 1);
+            document.getElementById(location4).innerHTML = data[i].tech;
+            var location5 = 'team' + (i + 1);
+            document.getElementById(location5).innerHTML = data[i].team;
+            var location6 = 'age' + (i + 1);
+            document.getElementById(location6).innerHTML = data[i].age;
+            var location7 = 'exp' + (i + 1);
+            document.getElementById(location7).innerHTML = data[i].experience;
+            var location8 = 'salary' + (i + 1);
+            document.getElementById(location8).innerHTML = data[i].salary;
+          }
+        })
+        .catch(function(error) {
+          console.log(error);
+        });
+    }
+  </script>
+  <script src="/__/firebase/8.2.3/firebase-app.js"></script>
+  <script src="/__/firebase/init.js"></script>
+  <!-- END: Page JS-->
+</body>
+
+</html>

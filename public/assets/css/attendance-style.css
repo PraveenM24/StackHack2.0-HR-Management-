@@ -1,0 +1,22 @@
+#table-bordered {
+  margin: 12px 0px;
+  ;
+}
+
+.card-header {
+  margin-bottom: 20px;
+}
+
+.product-action {
+  cursor: default;
+}
+
+.feather {
+  cursor: pointer;
+}
+
+.button {
+  cursor: pointer;
+  border: 0px solid #FFFFFF;
+  background-color: transparent;
+}

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+  <title>Attendance | Sigma Tech</title>
+  <!-- BEGIN: Vendor CSS-->
+  <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/vendors.min.css">
+  <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/tables/datatable/datatables.min.css">
+  <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/file-uploaders/dropzone.min.css">
+  <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/tables/datatable/extensions/dataTables.checkboxes.css">
+  <!-- END: Vendor CSS-->
+
+  <!-- BEGIN: Theme CSS-->
+  <link rel="stylesheet" type="text/css" href="app-assets/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="app-assets/css/bootstrap-extended.css">
+  <link rel="stylesheet" type="text/css" href="app-assets/css/colors.css">
+  <link rel="stylesheet" type="text/css" href="app-assets/css/components.css">
+  <link rel="stylesheet" type="text/css" href="app-assets/css/themes/dark-layout.css">
+  <link rel="stylesheet" type="text/css" href="app-assets/css/themes/semi-dark-layout.css">
+
+  <!-- BEGIN: Page CSS-->
+  <link rel="stylesheet" type="text/css" href="app-assets/css/core/menu/menu-types/vertical-menu.css">
+  <link rel="stylesheet" type="text/css" href=".app-assets/css/core/colors/palette-gradient.css">
+  <link rel="stylesheet" type="text/css" href="app-assets/css/plugins/file-uploaders/dropzone.css">
+  <link rel="stylesheet" type="text/css" href="app-assets/css/pages/data-list-view.css">
+  <!-- END: Page CSS-->
+
+  <!-- BEGIN: Custom CSS-->
+  <link rel="stylesheet" type="text/css" href="assets/css/attendance-style.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/emprec-style.css">
+  <!-- END: Custom CSS-->
+</head>
+
+<body>
+  <div class="topnav">
+    <img src="https://sigmatelecom.com/wp-content/uploads/2019/12/2-01.png">
+    <span onclick="window.location.href='index.html'"><i class="feather icon-power" width="30" height="30"></i> Logout</span>
+  </div>
+  <div class="leftnav">
+    <ul>
+      <li><a href="attendance.html">ATTENDANCE</a></li>
+      <li><a href="addemp.html">ADD EMPLOYEE</a></li>
+      <li><a href="emprec.html">EMPLOYEE RECORDS</a></li>
+    </ul>
+  </div>
+  <div class="app-content content">
+    <div class="content-body">
+      <div class="row" id="table-bordered">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-header">
+              <h4 class="card-title">Date:&nbsp;<span id="date"></span>
+              </h4>
+            </div>
+            <div class="card-content">
+              <div class="table-responsive">
+                <table class="table table-bordered mb-0">
+                  <thead>
+                    <tr>
+                      <th>Emp. ID</th>
+                      <th>Emp. Name</th>
+                      <th>Email</th>
+                      <th>Attendance</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row" id="empid1"></th>
+                      <td id="empname1"></td>
+                      <td id="email1"></td>
+                      <td class="product-action">
+                        &emsp;<button onclick="present('1p')" class="button" id="1p"><i class="feather icon-check"></i></button>&emsp;&emsp;
+                        <button onclick="absent('1a')" class="button" id="1a"><i class="feather icon-x"></i></button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row" id="empid2"></th>
+                      <td id="empname2"></td>
+                      <td id="email2"></td>
+                      <td class="product-action">
+                        &emsp;<button onclick="present('2p')" class="button" id="2p"><i class="feather icon-check"></i></button>&emsp;&emsp;
+                        <button onclick="absent('2a')" class="button" id="2a"><i class="feather icon-x"></i></button>
+                      </td>
+                    <tr>
+                      <th scope="row" id="empid3"></th>
+                      <td id="empname3"></td>
+                      <td id="email3"></td>
+                      <td class="product-action">
+                        &emsp;<button onclick="present('3p')" class="button" id="3p"><i class="feather icon-check"></i></button>&emsp;&emsp;
+                        <button onclick="absent('3a')" class="button" id="3a"><i class="feather icon-x"></i></button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row" id="empid4"></th>
+                      <td id="empname4"></td>
+                      <td id="email4"></td>
+                      <td class="product-action">
+                        &emsp;<button onclick="present('4p')" class="button" id="4p"><i class="feather icon-check"></i></button>&emsp;&emsp;
+                        <button onclick="absent('4a')" class="button" id="4a"><i class="feather icon-x"></i></button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row" id="empid5"></th>
+                      <td id="empname5"></td>
+                      <td id="email5"></td>
+                      <td class="product-action">
+                        &emsp;<button onclick="present('5p')" class="button" id="5p"><i class="feather icon-check"></i></button>&emsp;&emsp;
+                        <button onclick="absent('5a')" class="button" id="5a"><i class="feather icon-x"></i></button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row" id="empid6"></th>
+                      <td id="empname6"></td>
+                      <td id="email6"></td>
+                      <td class="product-action">
+                        &emsp;<button onclick="present('6p')" class="button" id="6p"><i class="feather icon-check"></i></button>&emsp;&emsp;
+                        <button onclick="absent('6a')" class="button" id="6a"><i class="feather icon-x"></i></button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row" id="empid7"></th>
+                      <td id="empname7"></td>
+                      <td id="email7"></td>
+                      <td class="product-action">
+                        &emsp;<button onclick="present('7p')" class="button" id="7p"><i class="feather icon-check"></i></button>&emsp;&emsp;
+                        <button onclick="absent('7a')" class="button" id="7a"><i class="feather icon-x"></i></button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script type="text/javascript">
+    function present(id) {
+      var request;
+      var index = id.substring(0, id.length - 1);
+
+      var empid = JSONDATA[index - 1].empid;
+      var name = JSONDATA[index - 1].empname;
+      var email = JSONDATA[index - 1].email;
+
+      request = $.ajax({
+        url: "https://script.google.com/macros/s/AKfycbzqvp5qAjezvZ2Dp3xl7rv70tSlwC9YaQUmSD_fnLnfD1H5kCmXiZ1MUg/exec",
+        type: "post",
+        data: {
+          ID: empid,
+          NAME: name,
+          EMAIL: email,
+          ATTENDANCE: "Present"
+        }
+      });
+      event.preventDefault();
+
+      document.getElementById(id).disabled = true;
+
+    }
+
+    function absent(id) {
+      var request;
+      var index = id.substring(0, id.length - 1);
+
+      var empid = JSONDATA[index - 1].empid;
+      var name = JSONDATA[index - 1].empname;
+      var email = JSONDATA[index - 1].email;
+
+      request = $.ajax({
+        url: "https://script.google.com/macros/s/AKfycbzqvp5qAjezvZ2Dp3xl7rv70tSlwC9YaQUmSD_fnLnfD1H5kCmXiZ1MUg/exec",
+        type: "post",
+        data: {
+          ID: empid,
+          NAME: name,
+          EMAIL: email,
+          ATTENDANCE: "Absent"
+        }
+      });
+      event.preventDefault();
+
+      document.getElementById(id).disabled = true;
+    }
+
+    var today = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth() + 1;
+    var yyyy = today.getFullYear();
+    if (dd < 10) {
+      dd = '0' + dd;
+    }
+    if (mm < 10) {
+      mm = '0' + mm;
+    }
+    today = dd + '/' + mm + '/' + yyyy;
+    document.getElementById('date').innerHTML = today;
+
+    window.onload = function() {
+      fetch('https://sigmatechapi.herokuapp.com/employees')
+        .then(function(response) {
+          return response.json();
+        })
+        .then(function(data) {
+          window.JSONDATA = data;
+          for (var i = 0; i < data.length; i++) {
+            var location1 = 'empname' + (i + 1);
+            document.getElementById(location1).innerHTML = data[i].empname;
+            var location2 = 'empid' + (i + 1);
+            document.getElementById(location2).innerHTML = data[i].empid;
+            var location3 = 'email' + (i + 1);
+            document.getElementById(location3).innerHTML = data[i].email;
+          }
+        })
+        .catch(function(error) {
+          console.log(error);
+        });
+    }
+  </script>
+  <script src="/__/firebase/8.2.3/firebase-app.js"></script>
+  <script src="/__/firebase/init.js"></script>
+</body>
+
+</html>
