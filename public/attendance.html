@@ -58,7 +58,7 @@
             </div>
             <div class="card-content">
               <div class="table-responsive">
-                <table class="table table-bordered mb-0">
+                <table class="table table-bordered mb-0" id="emp-table">
                   <thead>
                     <tr>
                       <th>Emp. ID</th>
@@ -68,68 +68,7 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <th scope="row" id="empid1"></th>
-                      <td id="empname1"></td>
-                      <td id="email1"></td>
-                      <td class="product-action">
-                        &emsp;<button onclick="present('1p')" class="button" id="1p"><i class="feather icon-check"></i></button>&emsp;&emsp;
-                        <button onclick="absent('1a')" class="button" id="1a"><i class="feather icon-x"></i></button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row" id="empid2"></th>
-                      <td id="empname2"></td>
-                      <td id="email2"></td>
-                      <td class="product-action">
-                        &emsp;<button onclick="present('2p')" class="button" id="2p"><i class="feather icon-check"></i></button>&emsp;&emsp;
-                        <button onclick="absent('2a')" class="button" id="2a"><i class="feather icon-x"></i></button>
-                      </td>
-                    <tr>
-                      <th scope="row" id="empid3"></th>
-                      <td id="empname3"></td>
-                      <td id="email3"></td>
-                      <td class="product-action">
-                        &emsp;<button onclick="present('3p')" class="button" id="3p"><i class="feather icon-check"></i></button>&emsp;&emsp;
-                        <button onclick="absent('3a')" class="button" id="3a"><i class="feather icon-x"></i></button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row" id="empid4"></th>
-                      <td id="empname4"></td>
-                      <td id="email4"></td>
-                      <td class="product-action">
-                        &emsp;<button onclick="present('4p')" class="button" id="4p"><i class="feather icon-check"></i></button>&emsp;&emsp;
-                        <button onclick="absent('4a')" class="button" id="4a"><i class="feather icon-x"></i></button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row" id="empid5"></th>
-                      <td id="empname5"></td>
-                      <td id="email5"></td>
-                      <td class="product-action">
-                        &emsp;<button onclick="present('5p')" class="button" id="5p"><i class="feather icon-check"></i></button>&emsp;&emsp;
-                        <button onclick="absent('5a')" class="button" id="5a"><i class="feather icon-x"></i></button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row" id="empid6"></th>
-                      <td id="empname6"></td>
-                      <td id="email6"></td>
-                      <td class="product-action">
-                        &emsp;<button onclick="present('6p')" class="button" id="6p"><i class="feather icon-check"></i></button>&emsp;&emsp;
-                        <button onclick="absent('6a')" class="button" id="6a"><i class="feather icon-x"></i></button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row" id="empid7"></th>
-                      <td id="empname7"></td>
-                      <td id="email7"></td>
-                      <td class="product-action">
-                        &emsp;<button onclick="present('7p')" class="button" id="7p"><i class="feather icon-check"></i></button>&emsp;&emsp;
-                        <button onclick="absent('7a')" class="button" id="7a"><i class="feather icon-x"></i></button>
-                      </td>
-                    </tr>
+
                   </tbody>
                 </table>
               </div>
@@ -202,6 +141,7 @@
     document.getElementById('date').innerHTML = today;
 
     window.onload = function() {
+      var table = document.getElementById('emp-table')
       fetch('https://sigmatechapi.herokuapp.com/employees')
         .then(function(response) {
           return response.json();
@@ -209,12 +149,16 @@
         .then(function(data) {
           window.JSONDATA = data;
           for (var i = 0; i < data.length; i++) {
-            var location1 = 'empname' + (i + 1);
-            document.getElementById(location1).innerHTML = data[i].empname;
-            var location2 = 'empid' + (i + 1);
-            document.getElementById(location2).innerHTML = data[i].empid;
-            var location3 = 'email' + (i + 1);
-            document.getElementById(location3).innerHTML = data[i].email;
+            var row = `<tr>
+              <td>${data[i].empid}</td>
+              <td>${data[i].empname}</td>
+              <td>${data[i].email}</td>
+              <td class="product-action">
+                &emsp;<button onclick="present('${i+1}p')" class="button" id="${i+1}p"><i class="feather icon-check"></i></button>&emsp;&emsp;
+                <button onclick="absent('${i+1}a')" class="button" id="${i+1}a"><i class="feather icon-x"></i></button>
+              </td>
+            </tr>`
+            table.innerHTML += row
           }
         })
         .catch(function(error) {

@@ -55,7 +55,7 @@
                 </div>
                 <div class="card-content">
                   <div class="card-body card-dashboard">
-                    <table class="table zero-configuration">
+                    <table class="table zero-configuration" id="emp-table">
                       <thead>
                         <tr>
                           <th>Emp. Name</th>
@@ -69,106 +69,6 @@
                         </tr>
                       </thead>
                       <tbody>
-                        <tr>
-                          <td id="empname1"></td>
-                          <td id="empid1"></td>
-                          <td id="email1"></td>
-                          <td id="tech1"></td>
-                          <td id="team1"></td>
-                          <td id="age1"></td>
-                          <td id="exp1"></td>
-                          <td id="salary1"></td>
-                        </tr>
-                        <tr>
-                          <td id="empname2"></td>
-                          <td id="empid2"></td>
-                          <td id="email2"></td>
-                          <td id="tech2"></td>
-                          <td id="team2"></td>
-                          <td id="age2"></td>
-                          <td id="exp2"></td>
-                          <td id="salary2"></td>
-                        </tr>
-                        <tr>
-                          <td id="empname3"></td>
-                          <td id="empid3"></td>
-                          <td id="email3"></td>
-                          <td id="tech3"></td>
-                          <td id="team3"></td>
-                          <td id="age3"></td>
-                          <td id="exp3"></td>
-                          <td id="salary3"></td>
-                        </tr>
-                        <tr>
-                          <td id="empname4"></td>
-                          <td id="empid4"></td>
-                          <td id="email4"></td>
-                          <td id="tech4"></td>
-                          <td id="team4"></td>
-                          <td id="age4"></td>
-                          <td id="exp4"></td>
-                          <td id="salary4"></td>
-                        </tr>
-                        <tr>
-                          <td id="empname5"></td>
-                          <td id="empid5"></td>
-                          <td id="email5"></td>
-                          <td id="tech5"></td>
-                          <td id="team5"></td>
-                          <td id="age5"></td>
-                          <td id="exp5"></td>
-                          <td id="salary5"></td>
-                        </tr>
-                        <tr>
-                          <td id="empname6"></td>
-                          <td id="empid6"></td>
-                          <td id="email6"></td>
-                          <td id="tech6"></td>
-                          <td id="team6"></td>
-                          <td id="age6"></td>
-                          <td id="exp6"></td>
-                          <td id="salary6"></td>
-                        </tr>
-                        <tr>
-                          <td id="empname7"></td>
-                          <td id="empid7"></td>
-                          <td id="email7"></td>
-                          <td id="tech7"></td>
-                          <td id="team7"></td>
-                          <td id="age7"></td>
-                          <td id="exp7"></td>
-                          <td id="salary7"></td>
-                        </tr>
-                        <tr>
-                          <td id="empname8"></td>
-                          <td id="empid8"></td>
-                          <td id="email8"></td>
-                          <td id="tech8"></td>
-                          <td id="team8"></td>
-                          <td id="age8"></td>
-                          <td id="exp8"></td>
-                          <td id="salary8"></td>
-                        </tr>
-                        <tr>
-                          <td id="empname9"></td>
-                          <td id="empid9"></td>
-                          <td id="email9"></td>
-                          <td id="tech9"></td>
-                          <td id="team9"></td>
-                          <td id="age9"></td>
-                          <td id="exp9"></td>
-                          <td id="salary9"></td>
-                        </tr>
-                        <tr>
-                          <td id="empname10"></td>
-                          <td id="empid10"></td>
-                          <td id="email10"></td>
-                          <td id="tech10"></td>
-                          <td id="team10"></td>
-                          <td id="age10"></td>
-                          <td id="exp10"></td>
-                          <td id="salary10"></td>
-                        </tr>
                       </tbody>
                       <tfoot>
                         <tr>
@@ -193,6 +93,7 @@
     </div>
   </div>
   </div>
+
   <!-- BEGIN: Vendor JS-->
   <script src="app-assets/vendors/js/vendors.min.js"></script>
   <!-- BEGIN Vendor JS-->
@@ -216,30 +117,27 @@
 
   <!-- BEGIN: Page JS-->
   <script src="app-assets/js/scripts/datatables/datatable.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script type="text/javascript">
-    window.onload = function() {
+    window.onload = function buildtable() {
+      var table = document.getElementById('emp-table')
       fetch('https://sigmatechapi.herokuapp.com/employees')
         .then(function(response) {
           return response.json();
         })
         .then(function(data) {
           for (var i = 0; i < data.length; i++) {
-            var location1 = 'empname' + (i + 1);
-            document.getElementById(location1).innerHTML = data[i].empname;
-            var location2 = 'empid' + (i + 1);
-            document.getElementById(location2).innerHTML = data[i].empid;
-            var location3 = 'email' + (i + 1);
-            document.getElementById(location3).innerHTML = data[i].email;
-            var location4 = 'tech' + (i + 1);
-            document.getElementById(location4).innerHTML = data[i].tech;
-            var location5 = 'team' + (i + 1);
-            document.getElementById(location5).innerHTML = data[i].team;
-            var location6 = 'age' + (i + 1);
-            document.getElementById(location6).innerHTML = data[i].age;
-            var location7 = 'exp' + (i + 1);
-            document.getElementById(location7).innerHTML = data[i].experience;
-            var location8 = 'salary' + (i + 1);
-            document.getElementById(location8).innerHTML = data[i].salary;
+            var row = `<tr>
+              <td>${data[i].empname}</td>
+              <td>${data[i].empid}</td>
+              <td>${data[i].email}</td>
+              <td>${data[i].tech}</td>
+              <td>${data[i].team}</td>
+              <td>${data[i].age}</td>
+              <td>${data[i].experience}</td>
+              <td>${data[i].salary}</td>
+            </tr>`
+            table.innerHTML += row
           }
         })
         .catch(function(error) {
